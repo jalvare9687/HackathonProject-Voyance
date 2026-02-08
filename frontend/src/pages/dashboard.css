@@ -1,0 +1,45 @@
+/* BEFORE: page { ... } */
+.page{
+  background:#F5F6FA;
+  min-height:100vh;
+
+  /* bigger side padding so it stops touching the browser edges */
+  padding: 40px 56px;
+
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial;
+}
+.header { display:flex; justify-content:space-between; align-items:center; margin-bottom:24px; gap:16px; }
+.title { font-size:32px; font-weight:600; color:#1A1D1F; margin:0; }
+.search { display:flex; align-items:center; gap:10px; background:#fff; border:1px solid #E5E5E5; border-radius:8px; padding:10px 14px; min-width:280px; }
+.searchInput { border:none; outline:none; width:100%; font-size:14px; }
+.searchIcon { font-size:16px; }
+.metricsRow { display:grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap:16px; margin-bottom:24px; }
+.cardsRow { display:grid; grid-template-columns: 1fr; gap:16px; margin-bottom:24px; }
+.card { background:#fff; border-radius:12px; padding:20px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.cardHeader { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:16px; }
+.cardTitle { font-size:18px; font-weight:600; color:#1A1D1F; }
+.subtle { font-size:14px; color:#6B7280; margin-top:4px; }
+.tableHeader { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; }
+.table { width:100%; border-collapse: collapse; }
+.table th { text-align:left; font-size:12px; color:#6B7280; padding:10px 8px; border-bottom:1px solid #E5E5E5; }
+.table td { padding:12px 8px; border-bottom:1px solid #EEF2F6; font-size:14px; color:#1A1D1F; }
+.linkish { color:#5B8DEE; font-weight:600; }
+.bold { font-weight:600; }
+.badge { display:inline-block; padding:4px 8px; border-radius:8px; font-weight:600; font-size:12px; }
+.badge.critical { background:#FEE2E2; color:#DC2626; }
+.badge.warning { background:#FEF3C7; color:#D97706; }
+.badge.normal { background:#D1FAE5; color:#059669; }
+
+@media (max-width: 1100px) {
+  .metricsRow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .metricsRow { grid-template-columns: 1fr; }
+  .search { min-width: 0; width: 100%; }
+  .header { flex-direction: column; align-items: stretch; }
+}
+
+.pageInner{
+  max-width: 1560px;
+  margin: 0 auto;     /* centers the whole dashboard */
+}
